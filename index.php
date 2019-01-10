@@ -35,11 +35,43 @@
     <tr>
         <td>
             <h2>Rectangle 5</h2>
+            <form name="form" action="" method="get">
+                <input type="text" name="randomN" id="randomN">
+                <button type="submit">Submit</button>
+            </form>
         </td>
-        <td>Rectangle 6</td>
+        <td>
+            <h2>Rectangle 6</h2>
+            <p><?echo $_GET['randomN'] ?></p>
+            <p>
+                <?php
+
+                if ( $_GET['randomN'] %2 === 0)
+                {
+                    echo "Even";
+                }
+                else
+                {
+                    echo "Odd";
+                }
+
+                ?>
+            </p>
+        </td>
     </tr>
     <tr>
-        <td>Rectangle 7</td>
+        <td>
+            <h2>Rectangle 7</h2>
+            <p>
+                <?php
+
+                srand($_GET['randomN']);
+
+                echo sprintf("Random Gen N: %d", rand())
+
+                ?>
+            </p>
+        </td>
         <td>Rectangle 8</td>
     </tr>
     <tr>
