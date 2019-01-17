@@ -101,6 +101,21 @@
                     <h2>Rectangle 10</h2>
                     <p>
 
+                        <?php
+
+                            $testString = "77c12394ef7d4f23a8fa07d87309afd9";
+
+                            for ($index = 0; $index <= 10000 ; $index++)
+                            {
+                                $generatedMD5 = md5("m" . str_pad($index, 4,"0"));
+
+                                if($generatedMD5 === $testString)
+                                {
+                                    echo "Password is " . "m" . str_pad($index, 4,"0");
+                                }
+
+                            }
+                        ?>
                     </p>
                 </td>
             </tr>
