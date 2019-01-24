@@ -165,9 +165,44 @@
                 <td>
 <!--                    Store MD5 hashes for mXX    XXX, then test how long it will take to look them up compared to manually cracking them.-->
                     <h2>Rectangle 12</h2>
+                    <p><?php
+
+                        require_once('Cracker.php');
+
+//                        writeToDB(10000);
+                        $startTime = microtime(true);
+
+                        echo printf("%s password hash is %s ","m9532", findInDB("m9532"));
+
+                        echo printf("<h3>Time taken: %f <h3/>", microtime(true)-$startTime);
+
+                    ?></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>Rectangle 13</h2>
+                    <p>
+                        <?php
+
+//                        writeToDB(1000000, "Rec13.csv");
+
+                        $startTime = microtime(true);
+
+                        echo printf("%s password hash is %s ","m953235", findInDB("m953235","Rec13.csv"));
+
+                        echo printf("<h3>Time taken: %f <h3/>", microtime(true)-$startTime);
+
+
+                        ?>
+                    </p>
+                </td>
+                <td>
+                    <h2>Rectangle 14</h2>
                     <?php
 
-                        writeToDB();
+                        echo printf("%s password, with binary, is %s", "m953235", findInDBBinary("m953235",1000000,"Rec13.csv"))
+
 
                     ?>
                 </td>
